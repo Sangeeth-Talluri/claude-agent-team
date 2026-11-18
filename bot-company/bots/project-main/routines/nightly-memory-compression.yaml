@@ -1,0 +1,10 @@
+name: nightly-memory-compression
+owner_bot: project-main
+trigger: schedule
+schedule: "23:30 owner-local, daily"
+steps:
+  - Review today's transcript for this bot
+  - Compress into at most 10 lines in MEMORY.md: decisions, outcomes, new recurring patterns
+  - Replace stale lines instead of appending duplicates; mark uncertainty (unconfirmed)
+approvals: none needed (own memory only)
+budget: small-fast

@@ -1,0 +1,10 @@
+{
+  "_comment": "Template only — copy per bot to bots/<bot>/.mcp.json and keep ONLY that bot's servers. Tokens come from the host .env, never from this file.",
+  "mcpServers": {
+    "github":  { "command": "TODO", "args": ["github-mcp-server"], "env": { "GITHUB_TOKEN": "${GITHUB_TOKEN}" } },
+    "slack":   { "command": "TODO", "args": ["slack-mcp-server"],  "env": { "SLACK_BOT_TOKEN": "${SLACK_BOT_TOKEN_<BOT>}" } },
+    "gmail":   { "command": "TODO", "args": ["gmail-mcp-server"] },
+    "gcal":    { "command": "TODO", "args": ["google-calendar-mcp-server"] },
+    "sentry":  { "command": "TODO", "args": ["sentry-mcp-server"], "env": { "SENTRY_AUTH_TOKEN": "${SENTRY_AUTH_TOKEN}" } }
+  }
+}

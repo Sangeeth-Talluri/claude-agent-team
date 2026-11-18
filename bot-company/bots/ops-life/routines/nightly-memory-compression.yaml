@@ -1,0 +1,10 @@
+name: nightly-memory-compression
+owner_bot: ops-life
+trigger: schedule
+schedule: "23:30 owner-local, daily"
+steps:
+  - Review today's work for this bot
+  - Update MEMORY.md: new standing preferences, new recurring senders, follow-ups changed
+  - Never copy email bodies or private details about other people into memory
+approvals: none needed (own memory only)
+budget: small-fast

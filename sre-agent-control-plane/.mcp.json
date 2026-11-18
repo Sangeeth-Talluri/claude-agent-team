@@ -1,0 +1,8 @@
+{
+  "_comment": "Template — keep only the servers this repo actually uses. Tokens come from your environment / secret store, never from this file. Delete this comment key before committing if your MCP client rejects unknown keys.",
+  "mcpServers": {
+    "github": { "command": "TODO", "args": ["github-mcp-server"] },
+    "sentry": { "command": "TODO", "args": ["sentry-mcp-server"] },
+    "datadog": { "command": "TODO", "args": ["datadog-mcp-server"] }
+  }
+}

@@ -1,0 +1,13 @@
+name: morning-brief
+owner_bot: chief-of-staff
+trigger: schedule
+schedule: "07:00 owner-local, Mon–Fri"        # TODO(owner): confirm time + days
+steps:
+  - Read the review queue (platform/queue) for everything changed since the last brief
+  - Ask each project bot for its one-paragraph overnight summary (from its queue entries)
+  - Check Gmail + Calendar (read-only) for today: first meeting, anything urgent unread
+  - List any virtual-card charges since the last brief
+  - Compose the brief in the exact format in PROMPT.md and deliver it to the owner
+approvals: none needed (read + report only)
+budget: small-fast for gathering, flagship for composing
+failure: If a source is unreachable, brief what you have and name the missing source.

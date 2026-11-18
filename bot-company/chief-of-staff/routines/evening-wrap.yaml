@@ -1,0 +1,9 @@
+name: evening-wrap
+owner_bot: chief-of-staff
+trigger: schedule
+schedule: "21:00 owner-local, Mon–Fri"        # Optional — TODO(owner): on or off?
+steps:
+  - Summarise today: what the bots finished, what is still running, what waits on the owner
+  - Carry anything undecided into tomorrow's brief list
+approvals: none needed (read + report only)
+budget: small-fast

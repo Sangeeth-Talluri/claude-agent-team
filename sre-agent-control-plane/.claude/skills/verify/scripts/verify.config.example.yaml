@@ -1,0 +1,12 @@
+# Copy to verify.config.yaml (same folder) and replace with THIS repo's real commands.
+# Format is deliberately simple: under "checks:", one line per check — name: command.
+# The command runs in the repo root. Its exit code is the verdict.
+checks:
+  tests: TODO(owner) e.g. pytest -q
+  lint: TODO(owner) e.g. make lint
+  smoke: TODO(owner) e.g. curl -sf http://localhost:8080/healthz
+  query-plan: TODO(owner) e.g. psql "$STAGING_DATABASE_URL" -c "EXPLAIN SELECT ..."
+  slo: TODO(owner) e.g. your CLI/API call that prints the SLI for the window
+  tf-plan: terraform -chdir=infra plan -detailed-exitcode
+  k8s-dryrun: kubectl apply --dry-run=server -f k8s/
+  migration-lint: TODO(owner) e.g. liquibase validate / golang-migrate dry run

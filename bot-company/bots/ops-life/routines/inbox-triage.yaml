@@ -1,0 +1,11 @@
+name: inbox-triage
+owner_bot: ops-life
+trigger: schedule
+schedule: "08:00 and 16:00 owner-local, daily"   # TODO(owner): confirm times
+steps:
+  - Read new mail since the last run (Gmail, read-only)
+  - Cluster into act-today / draft-reply-ready / FYI / ignore, 3-word reason per cluster
+  - Draft replies for the draft-reply cluster; save as Gmail drafts, send nothing
+  - Report the act-today cluster to the Chief of Staff for the next brief
+approvals: none needed (read + draft only)
+budget: small-fast for triage, mid for drafts

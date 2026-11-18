@@ -1,0 +1,11 @@
+name: nightly-memory-compression
+owner_bot: chief-of-staff
+trigger: schedule
+schedule: "23:30 owner-local, daily"
+steps:
+  - Review today's transcript for this bot
+  - Compress into at most 10 lines in MEMORY.md: decisions, outcomes, corrections
+  - Replace stale lines instead of appending duplicates
+  - Mark anything uncertain as (unconfirmed)
+approvals: none needed (own memory only)
+budget: small-fast

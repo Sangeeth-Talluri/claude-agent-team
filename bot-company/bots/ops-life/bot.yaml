@@ -1,0 +1,19 @@
+name: ops-life
+role: Inbox, calendar, follow-ups. Prepares everything, sends nothing.
+owns:
+  domain: email-and-calendar
+model:
+  default: mid
+  triage: small-fast
+connectors:
+  gmail: read-and-draft       # Drafts only. Sending is the owner's tap — always.
+  google_calendar: read       # + create holds with no invitees (see APPROVALS.md)
+memory: ./MEMORY.md
+routines:
+  - routines/inbox-triage.yaml
+  - routines/meeting-prep.yaml
+  - routines/nightly-memory-compression.yaml
+budget:
+  per_day_usd: 15
+  max_concurrent_agents: 2
+approvals: company/APPROVALS.md

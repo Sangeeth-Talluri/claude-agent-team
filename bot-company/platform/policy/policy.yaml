@@ -1,0 +1,18 @@
+# Platform policy — enforced in code by the launcher, not by prompts.
+global:
+  kill_switch: false          # true = no bot may launch any agent. Owner sets this.
+  max_total_concurrent_agents: 8
+per_task:
+  max_turns: 60
+  max_usd: 15
+  max_wall_clock_minutes: 90
+  verifier_fail_loops: 2      # after 2 failed verifications, escalate to the owner
+repo_locks:
+  one_writer_per_repo: true   # two bots/agents never edit the same repo at once
+approvals:
+  send_email: human-always
+  post_external: human-always
+  merge_pr: human-always
+  pay: virtual-card-cap       # caps live in company/APPROVALS.md
+evidence:
+  pr_requires_evidence_bundle: true   # no evidence = launcher refuses to open the PR

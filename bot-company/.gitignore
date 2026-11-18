@@ -1,0 +1,7 @@
+.env
+*.log
+evidence/
+worktrees/
+queue/*.db
+node_modules/
+__pycache__/

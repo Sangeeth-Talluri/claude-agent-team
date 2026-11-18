@@ -1,0 +1,8 @@
+.env
+*.log
+evidence/
+worktrees/
+*.db
+node_modules/
+__pycache__/
+.DS_Store

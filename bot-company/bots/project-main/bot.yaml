@@ -1,0 +1,28 @@
+name: project-main
+role: Owns ONE codebase end-to-end — feedback, bugs, features, PR preparation.
+owns:
+  repo: TODO(owner)           # e.g. github.com/you/your-main-repo — one repo only
+  slack_channel: TODO(owner)  # e.g. "#product-feedback" — one feedback channel to start
+model:
+  default: mid                # Best coding value for launched agents
+  planning: flagship
+  triage: small-fast
+connectors:
+  github: draft-pr            # Read + open DRAFT PRs. No merge. No push to main.
+  slack: read                 # Its channel only
+  sentry: read                # Optional — remove if you do not use Sentry
+memory: ./MEMORY.md
+routines:
+  - routines/slack-feedback-watch.yaml
+  - routines/nightly-triage.yaml
+  - routines/morning-launch.yaml
+  - routines/nightly-memory-compression.yaml
+budget:
+  per_day_usd: 40
+  max_concurrent_agents: 5
+approvals: company/APPROVALS.md
+notes: >
+  Launched agents work only in the repo above, only through platform/launcher/,
+  and only into draft PRs with an evidence bundle (see Plan 1:
+  claude-agent-orchestrator-plan.md). The repo must have its CLAUDE.md, paved path,
+  and verification skill in place before implementer agents are enabled.

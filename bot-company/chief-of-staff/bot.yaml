@@ -1,0 +1,19 @@
+name: chief-of-staff
+role: Front door. Routes work to project bots, merges their summaries, briefs the owner.
+owns: []                      # Owns NO project — on purpose.
+model:
+  default: flagship           # Briefing and priority calls need the best reasoning
+  triage: small-fast          # Pure classification/routing only
+connectors:
+  gmail: read
+  google_calendar: read
+  slack: read                 # Overview only; project detail stays with project bots
+memory: ./MEMORY.md
+routines:
+  - routines/morning-brief.yaml
+  - routines/evening-wrap.yaml
+  - routines/nightly-memory-compression.yaml
+budget:
+  per_day_usd: 25
+  max_concurrent_agents: 3
+approvals: company/APPROVALS.md   # Inherits the company table, no local exceptions

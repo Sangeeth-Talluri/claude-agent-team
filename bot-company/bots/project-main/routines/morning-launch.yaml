@@ -1,0 +1,14 @@
+name: morning-launch
+owner_bot: project-main
+trigger: schedule
+schedule: "06:45 owner-local, Mon–Fri"
+steps:
+  - Take the top items from nightly-triage + any overnight Slack-watch reproductions
+  - Fan out (within budget + concurrency caps in bot.yaml):
+      triage agents (read-only) -> research/reproduce agents (sandbox) ->
+      review agents (overnight PRs, CI) -> drafting agents (specs, PR descriptions)
+  - Implementer agents: ONLY task types the owner has enabled, ONLY into draft PRs,
+    ONLY with the verification skill run and evidence attached
+  - Write every job into the queue so the 07:00 Chief of Staff brief can report it
+approvals: inherited from company/APPROVALS.md
+budget: enforced by platform/policy/ — hitting the cap stops the fan-out, not the brief

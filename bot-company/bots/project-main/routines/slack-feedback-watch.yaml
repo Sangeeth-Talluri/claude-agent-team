@@ -1,0 +1,14 @@
+name: slack-feedback-watch
+owner_bot: project-main
+trigger: webhook              # Slack Events API (Socket Mode on a home host is easiest)
+source: TODO(owner)           # the one channel named in bot.yaml
+steps:
+  - Classify the message: bug / feature / question / noise (small-fast, JSON out)
+  - If noise or question: file it in the queue as FYI, take no other action
+  - If bug: create a task, launch a reproduce-only cloud agent with the Feature Map
+    references for the named feature, attach its evidence to the task
+  - If feature: create a task in "needs-spec" state — no code is written from a
+    one-line request
+  - Post NOTHING back to the channel automatically. A draft reply may be prepared.
+approvals: none for triage/reproduce; any fix, reply, or PR needs the normal gates
+budget: per-task cap from platform/policy/policy.yaml

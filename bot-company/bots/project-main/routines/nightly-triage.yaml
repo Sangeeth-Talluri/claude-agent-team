@@ -1,0 +1,11 @@
+name: nightly-triage
+owner_bot: project-main
+trigger: schedule
+schedule: "02:00 owner-local, daily"
+steps:
+  - Sweep: open GitHub issues, CI failures, Sentry new issues since yesterday
+  - De-duplicate against existing queue tasks
+  - Rank by: production impact > CI broken > user-reported > cosmetic
+  - Leave the ranked list in the queue for the morning launch — start nothing big at night
+approvals: none needed (read + rank only)
+budget: small-fast

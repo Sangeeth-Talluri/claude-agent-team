@@ -1,0 +1,11 @@
+name: meeting-prep
+owner_bot: ops-life
+trigger: schedule
+schedule: "06:30 owner-local, daily"   # prepares today's meetings before the 07:00 brief
+steps:
+  - List today's calendar events with other people on them
+  - For each: attendees, purpose (from the invite + related email thread), last decision,
+    likely questions — one page per meeting, saved where the owner can open it
+  - Hand the Chief of Staff a one-line-per-meeting summary for the morning brief
+approvals: none needed (read + prepare only)
+budget: mid
