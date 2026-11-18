@@ -11,6 +11,7 @@ they have earned it — merge it.
 | `plans/` | The three build plans + addendum, decoded from Lauren Tan's talks. **Plan 1:** the PR factory (verification skill, Service/Feature Map, paved path, Inner/Outer Loop). **Plan 2:** persistent bots — one bot per project, its own memory, Chief of Staff, routines, review queue. **Plan 3:** the team at full strength — loops and graphs, spec-first, skill evals, PM agent, auto-merge trust ladder. Plus the Reel 5 addendum (three-tier org). |
 | `bot-company/` | Plan 2 scaffolded: Chief of Staff + Project Bot + Ops/Life Bot — bot configs, prompts, per-bot memory, routines, company rules/approvals, and the shared platform (launcher, queue, policy). |
 | `sre-agent-control-plane/` | Plan 1 scaffolded for a backend / SRE / database repo: `CLAUDE.md`, 6 subagents, 8 skills (including a working verification CLI with evidence bundles), guard hooks that block dangerous operations, and spec templates. Copy its contents into a work repo root to use it (see its `INSTALL.md`). |
+| `general-agent-control-plane/` | The same control plane, generalized for ANY repo (web, mobile, backend, data): stack-neutral paved path, repo map instead of service map, generic checks (tests / lint / typecheck / build / smoke) with ready-to-copy config examples for Node, Python, Go, Java, and Rust in `STACK_EXAMPLES.md`. Same tested verification CLI and evidence hooks. |
 
 ## Build order
 1. Repo foundation + verification skill (Plan 1, Phases 0–2) in one pilot repo.

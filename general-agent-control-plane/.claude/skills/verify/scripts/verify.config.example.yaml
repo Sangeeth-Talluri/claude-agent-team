@@ -1,0 +1,14 @@
+# Copy to verify.config.yaml (same folder) and replace with THIS repo's real commands.
+# Format is deliberately simple: under "checks:", one line per check — name: command.
+# The command runs in the repo root. Its exit code is the verdict.
+# STACK_EXAMPLES.md at the kit root has ready-made sets for Node/TS, Python, Go, Java, Rust.
+checks:
+  tests: TODO(owner) e.g. npm test / pytest -q / go test ./... / cargo test
+  lint: TODO(owner) e.g. npm run lint / ruff check . / go vet ./...
+  typecheck: TODO(owner) e.g. npx tsc --noEmit / mypy . / cargo check (delete this line if your stack has no typecheck step)
+  build: TODO(owner) e.g. npm run build / python -m build / go build ./... / cargo build --release
+  smoke: TODO(owner) e.g. start the app and curl -sf http://localhost:3000/ or run the built CLI with --version
+# Add repo-specific checks the same way, e.g.:
+#   e2e: TODO(owner) e.g. npm run test:e2e
+#   bench: TODO(owner) e.g. the benchmark command whose output the perf skill compares
+#   audit: TODO(owner) e.g. npm audit --audit-level=high
