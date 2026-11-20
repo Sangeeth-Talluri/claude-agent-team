@@ -2,7 +2,7 @@
 ## The repo-level scaffold from Plan 1, written to fit any codebase
 
 Copy this folder's contents into the **root of your repo** (see `INSTALL.md`).
-It gives Claude Code everything Lauren Tan's system needs, in stack-neutral form —
+It gives Claude Code everything the system needs, in stack-neutral form —
 the same design as the backend/SRE kit, with the enforcement pointed at the risks
 every repo shares instead of one stack's risks:
 

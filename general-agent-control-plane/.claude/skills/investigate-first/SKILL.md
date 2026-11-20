@@ -4,7 +4,7 @@ description: Use before diagnosing any bug, failure, or performance problem. Sto
 ---
 # Investigate First — the anti-hallucination skill
 
-Built from Lauren Tan's most common observed failure: an agent confidently naming
+Built from a common observed failure: an agent confidently naming
 a "smoking gun" it never actually verified. That is banned here.
 
 ## The rule

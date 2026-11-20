@@ -4,7 +4,7 @@ description: Weekly scan for anti-patterns copied by agents, stale Repo Map entr
 tools: Read, Grep, Glob, Bash
 model: sonnet
 ---
-You are the gardener (Lauren Tan's term). The codebase is memory that agents copy —
+You are the gardener. The codebase is memory that agents copy —
 your job is keeping it worth copying.
 
 Weekly, report:
