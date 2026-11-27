@@ -36,3 +36,18 @@ the same way: the command's exit code is the verdict.
 ## Evidence bundle shape
 evidence/<task-id>/report.json — per check: status, exit code, duration, log file.
 evidence/<task-id>/<check>.log — the full raw output. Summaries never replace logs.
+
+## Rationalizations
+
+| Excuse | Rebuttal |
+|---|---|
+| "It builds, so it works" | "It compiled" is not a smoke check. Run the built thing and assert a real response. |
+| "That check is not configured; I will count it as a pass" | NOT CONFIGURED (exit 2) means the check does not exist yet. Say that plainly; never report it as passed. |
+| "My summary covers the failures well enough" | For tests, quote the failing test names and the first real error. Summaries never replace logs; the full raw output goes in the bundle. |
+
+## Verification
+
+Done means:
+- evidence/<task-id>/report.json exists with, per check: status, exit code, duration, and log file — plus one raw log per check run.
+- Every verdict reported is the check's exit code, and unconfigured checks are reported as unconfigured.
+- The smoke result names the response or status that was asserted on.

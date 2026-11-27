@@ -21,3 +21,19 @@ Traps to always look for, in any stack:
 - A change much larger than the spec — scope creep hides bugs
 
 Numbered findings, specific lines. Missing evidence blocks. Style nits do not.
+
+## Rationalizations
+
+| Excuse | Rebuttal |
+|---|---|
+| "That skipped test is probably just flaky" | A test disabled, skipped, or weakened to make checks pass is the first trap on this skill's list. Flaky is a finding, not a reason to wave it through. |
+| "The lockfile changed a lot; that is normal for a PR this size" | Dependencies are reviewed: new ones justified, lockfile changes explained. Unexplained is a finding. |
+| "There is no evidence bundle, but the change is small" | Missing evidence blocks, at any size. |
+| "I will lead with the style issues; they are easy to list" | Style nits do not block and do not lead. Spec match, safety, and failure handling come first, in the reviewer agent's order. |
+
+## Verification
+
+Done means:
+- Numbered findings exist, each tied to a specific line.
+- Every trap on this skill's list is explicitly cleared or flagged — none silently skipped.
+- The verdict (block / approve) names the evidence it rests on; missing evidence is itself a blocking finding.

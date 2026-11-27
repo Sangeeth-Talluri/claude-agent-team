@@ -17,3 +17,20 @@ The human incident commander commands. The agent is the scribe and the fetcher.
    investigate-first discipline, in parallel where possible.
 5. **After:** draft the post-incident review from the timeline — what happened,
    what worked, action items with owners. No blame language, ever.
+
+## Rationalizations
+
+| Excuse | Rebuttal |
+|---|---|
+| "Find the root cause first; then we will know how to fix it" | Mitigation before root cause. Always, in that order. |
+| "I will just run the rollback myself to save time" | Agents never execute production mitigations. Prepare the option with its risks; a human approves and acts. |
+| "The timeline can be reconstructed afterwards from chat" | Timeline as you go. Reconstruction from memory is how facts get invented; anything unverified is marked (unconfirmed). |
+| "The impact is roughly the checkout flow" | The impact statement is kept current and names who/what is affected, since when, and which SLO is burning. Roughly is not a statement. |
+
+## Verification
+
+Done means:
+- A timestamped timeline exists, with unverified entries marked (unconfirmed).
+- A current impact statement names the affected users/services and the SLO that is burning.
+- Every mitigation taken was prepared with its risks and approved and executed by a human.
+- A post-incident review draft exists: what happened, what worked, action items with owners, and no blame language.

@@ -13,3 +13,17 @@ Rules:
 - Read it before investigating. Name the map entries you used in your report.
 - If reality disagrees with the map, say so — that is a gardener finding.
 - Keep entries short and factual. Doc *links*, not doc copies.
+
+## Rationalizations
+
+| Excuse | Rebuttal |
+|---|---|
+| "I know this codebase; skip the map" | Read it before investigating, and name the map entries you used in your report. Memory is not the map. |
+| "The report already names a file, so the map step is done" | The map matters most when a report names a symptom instead of a place in the code — that is the route from symptom to module to the check to run. |
+| "The map is out of date here; I will just ignore that part" | A disagreement between the map and reality is a gardener finding. Say so; do not silently route around it. |
+
+## Verification
+
+Done means:
+- The report names the REPO_MAP.md entries it used to get from symptom to module to check.
+- Any place where reality disagreed with the map is recorded as a gardener finding.

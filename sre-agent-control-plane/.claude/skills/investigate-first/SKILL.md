@@ -25,3 +25,19 @@ You may not state a cause until you have, in this order:
 ## Done means
 A short evidence note: files read, signals quoted, candidates, the separating
 check, and its result. That note goes in the task's evidence bundle.
+
+## Rationalizations
+
+| Excuse | Rebuttal |
+|---|---|
+| "This error signature is famous — it is the connection pool" | Famous signatures are how smoking guns get invented. Read the actual code on the path the symptom travels first. |
+| "I have read the code; I can name the cause now" | Steps 1–3 all precede a cause: the code, the real signal quoted with timestamps, and what changed recently. Then at least two candidates. |
+| "One candidate is clearly stronger; the second is a formality" | The second candidate is what makes the separating check real. No separating check, no cause statement. |
+| "Paraphrasing the logs is faster than quoting them" | Signals are quoted, with timestamps, not paraphrased from memory. Paraphrase is the failure this skill exists to stop. |
+
+## Verification
+
+Done means:
+- An evidence note exists listing: files read, signals quoted, at least two candidate causes, the separating check, and its result.
+- Any sentence of the form "the cause is X" cites evidence from steps 1–3 that rules out the alternative candidate.
+- The evidence note is filed in the task's evidence bundle.

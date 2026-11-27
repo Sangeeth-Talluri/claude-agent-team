@@ -19,3 +19,19 @@ description: Build a feature the paved-path way — spec first, compatibility ke
    draft PR. New behaviour gets new tests.
 6. **Release note in the PR:** how it ships, how it turns off or rolls back,
    and what you watch right after release.
+
+## Rationalizations
+
+| Excuse | Rebuttal |
+|---|---|
+| "Small feature; skip the spec" | Non-trivial is defined by what the change touches — stored data, a public API/schema, user-facing behaviour, a build/release step — not by size. Spec first; a human approves it. |
+| "Breaking the old API is fine; everyone is on the new one" | Additive first; the old version keeps working until the new one is proven. Anything that breaks compatibility is noted in the spec and needs explicit human sign-off. |
+| "I will invent a pattern that fits better than the existing one" | Follow the paved path: copy the gold-standard module, component, and test patterns named in .claude/rules/paved-path.md. |
+| "The release note can go in the chat thread" | The PR carries the release note: how it ships, how it turns off or rolls back, and what is watched right after release. |
+
+## Verification
+
+Done means:
+- An approved spec (specs/TEMPLATE.md) exists for the change.
+- The draft PR carries the evidence bundle: tests + lint + typecheck + build + smoke, with new tests for new behaviour.
+- The release note in the PR states how the feature ships, how it turns off or rolls back, and what is watched right after release.

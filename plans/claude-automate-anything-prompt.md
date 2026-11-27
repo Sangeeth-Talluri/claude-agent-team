@@ -96,6 +96,49 @@ CLAUDE / copy prompt -> paste in chat -> automation starts
 | `no_data -> build a logging tool` | Claude writes a small Skill + log file on the spot |
 | the steps get done | sub-agents do the steps; you keep the approvals |
 
+## The six phase gates (added 2026-11-27, from Addy Osmani's Agent Skills)
+
+The prompt above already works in phases — interview, restate, hold, build.
+This section makes the phases a hard chain, borrowed from the Agent Skills
+lifecycle (DEFINE → PLAN → BUILD → VERIFY → REVIEW → SHIP). When an
+automation built by this prompt produces code or a change, it moves through
+six gates:
+
+```
+/spec → /plan → /build → /test → /review → /ship
+```
+
+**The gate rule: a phase cannot start until the previous phase's
+verification evidence exists.** Evidence means the artifact the phase
+promises, filed where the next phase can read it — not a claim that the
+phase happened. This is the prompt's own `verify :=` rule ("check the
+source system yourself before you say done; a draft is not sent, a run is
+not a result") applied between every pair of phases.
+
+| Gate | The phase is done when this evidence exists |
+|---|---|
+| `/spec` | The spec is written and the human has approved it — goal, process, and the `done` definition from sections 01–03, saved as files |
+| `/plan` | The work is split into small, ordered steps, each with its check named in advance |
+| `/build` | The thing exists: the files, the Skill, the routine — built to the plan, one step at a time |
+| `/test` | The checks named in the plan have actually run and their output is filed (the verify skill's evidence bundle in the control planes) |
+| `/review` | The five-axis review below has been run by an agent that did not do the building, and its findings are answered |
+| `/ship` | The human's yes is on record for anything that sends, pays, books, or commits — the `approval :=` rule in section 05 — and the change is live or explicitly held |
+
+**The REVIEW gate is a five-axis review.** The reviewer scores the work on
+all five axes and reports findings per axis; a failure on any axis sends
+the work back to `/build`, not forward to `/ship`:
+
+1. **Correctness** — does it do what the spec says, including the cases
+   that went wrong in the section-03 examples?
+2. **Readability** — can the human who owns this automation read what was
+   built and change it without the agent?
+3. **Architecture** — does it fit the structure already in place (the
+   control planes, the paved path), or does it invent a parallel one?
+4. **Security** — secrets, permissions, and approval points: does anything
+   send, pay, book, or commit without the human's yes?
+5. **Performance** — does it run at the speed and cost the goal assumes,
+   measured, not guessed?
+
 ## How this fits the agent system already built (Nov 18)
 
 - This prompt is the **front door**. The build plans and control-plane kits

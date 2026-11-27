@@ -21,3 +21,20 @@ is the scribe and the fetcher.
    where possible.
 5. **After:** draft the post-issue review from the timeline — what happened,
    what worked, action items with owners. No blame language, ever.
+
+## Rationalizations
+
+| Excuse | Rebuttal |
+|---|---|
+| "Find the root cause first; then we will know how to fix it" | Mitigation before root cause. Always, in that order. |
+| "I will roll back the release myself to save a few minutes" | Agents never deploy, roll back, or change production data. Prepare the options with their risks; a human approves and executes. |
+| "The timeline can be written up afterwards from memory" | Timeline as you go. Reconstruction from memory is how facts get invented; anything unverified is marked (unconfirmed). |
+| "The impact is obvious from the alert" | The impact statement is kept current: who/what is affected, since when, and how badly. Obvious is not a statement. |
+
+## Verification
+
+Done means:
+- A timestamped timeline exists, with unverified entries marked (unconfirmed).
+- A current impact statement names who/what is affected, since when, and how badly.
+- Every mitigation taken was prepared with its risks and approved and executed by a human.
+- A post-issue review draft exists: what happened, what worked, action items with owners, and no blame language.
